@@ -112,7 +112,7 @@ async function mediumLabel(pdf, startIndex, count, barcodeText) {
 }
 
 
-// largeLabel
+// largeLabel 
 async function largeLabel(pdf, startIndex, count, barcodeText, productName) {
   const templateImg = await imageToBase64("/template/large.png");
   const workspace = { 
