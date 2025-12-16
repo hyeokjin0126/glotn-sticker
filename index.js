@@ -24,18 +24,18 @@ document.querySelector("#start").addEventListener("click", async function(){
 
   // create
   for (const target of ["small", "medium", "large"]) {
-    let startIndex = Number(document.querySelector(`#${target}-idx`).value) - 1;
+    let startIndex = Number(document.querySelector(`#${target}-idx`).value);
     let count = Number(document.querySelector(`#${target}-cnt`).value);
     
-    if (startIndex >= 0) {
+    if (startIndex > 0) {
+      // addPage
+      if(target != "small" && count > 0){ pdf.addPage(); }
+      
       // addLabel
       for (const { productName, barcodeText } of datas) {
-        console.log(startIndex, count, productName, barcodeText)
         await window[`${target}Label`](pdf, startIndex, count, barcodeText, productName);
         startIndex += count;
       }
-      // addPage
-      if(target != "large"){ pdf.addPage(); }
     }
   }
 
