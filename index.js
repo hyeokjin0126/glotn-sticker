@@ -1,7 +1,7 @@
 const { jsPDF } = window.jspdf;
 
 // bacord 기본값
-document.querySelectorAll(".bacorde-text").forEach(e => {
+document.querySelectorAll(".barcode-text").forEach(e => {
   e.value = "GK" + new Date().toISOString().slice(2,7).replace("-","");
 })
 
@@ -10,7 +10,7 @@ document.querySelectorAll(".bacorde-text").forEach(e => {
 document.querySelector("#start").addEventListener("click", async function(){
   const datas = [];
   const productNames = document.querySelectorAll(".product-code");
-  const barcodeTexts = document.querySelectorAll(".bacorde-text");
+  const barcodeTexts = document.querySelectorAll(".barcode-text");
   
   productNames.forEach((element, cnt) => {
     const productName = element.value.trim();
@@ -46,7 +46,7 @@ document.querySelector("#start").addEventListener("click", async function(){
 
 // smallLabel
 async function smallLabel(pdf, startIndex, count, barcodeText) {
-  const templateImg = await imageToBase64("/template/small.png");
+  const templateImg = await imageToBase64("./template/small.png");
   const workspace = { 
     pdf: { top: 23.3, left: 9.7 },
     label: { width: 30, height: 14, cols: 6, rows: 16, gap: 2 },
@@ -80,7 +80,7 @@ async function smallLabel(pdf, startIndex, count, barcodeText) {
 
 // mediumLabel
 async function mediumLabel(pdf, startIndex, count, barcodeText) {
-  const templateImg = await imageToBase64("/template/medium.png");
+  const templateImg = await imageToBase64("./template/medium.png");
   const workspace = { 
     pdf: { top: 14.5, left: 6.5 },
     label: { width: 64, height: 33.86, cols: 3, rows: 8, gap: 2.4 },
@@ -114,7 +114,7 @@ async function mediumLabel(pdf, startIndex, count, barcodeText) {
 
 // largeLabel 
 async function largeLabel(pdf, startIndex, count, barcodeText, productName) {
-  const templateImg = await imageToBase64("/template/large.png");
+  const templateImg = await imageToBase64("./template/large.png");
   const workspace = { 
     pdf: { top: 9.8, left: 4.5 },
     label: { width: 98.73, height: 138.94, cols: 2, rows: 2, gap: 2.5 },
