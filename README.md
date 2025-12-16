@@ -1,2 +1,0 @@
-# glotn-server-label
-glotn

@@ -1,0 +1,118 @@
+:root {
+  --gray-500: #e3e3e3;
+  --gray-600: #d1d1d1;
+  --gray-700: #7e7e7e;
+  --gray-900: #3a3a3a;
+  
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+}
+
+
+body {
+    display: flex;
+    margin: 4% calc((100% - 500px) / 2) 0;
+}
+
+
+/*  */
+/* view-wrap */
+#view-wrap {
+    flex: 1;
+    display: flex;
+    gap: 20px 50px;
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+.view-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/*  */
+/* view-menu */
+.view-menu {
+    height: 30px;
+    display: flex;
+    align-items: end;
+    gap: 5px;
+    margin-bottom: 2px;
+}
+
+.view-menu:not(:nth-child(1)) {
+    margin-top: 20px;
+}
+
+.view-menu label {
+    font-size: 18px;
+    margin-right: auto;
+}
+
+.view-menu button {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--gray-700);
+    background-color: transparent;
+    border: none;
+}
+
+.view-menu button:hover {
+    color: var(--black);
+}
+
+
+/*  */
+/* config */
+.view-section .config {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+    border: 1px solid var(--gray-700);
+    border-radius: 5px;
+    padding: 7px 15px;
+    box-sizing: border-box;
+}
+
+.view-section .config label {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.view-section .config label * {
+    color: var(--gray-700);
+    font-size: 11px;
+    text-decoration: none;
+    padding-bottom: 1px;
+}
+
+.view-section .config :nth-child(2) {
+    flex: 1;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: var(--gray-700);
+}
+
+
+.black-btn {
+  padding: 7px 15px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.black-btn:hover { 
+    background-color: var(--gray-900); 
+}

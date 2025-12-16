@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    
+    <div id="view-wrap">
+
+        <section class="view-section">
+
+            <!-- view-menu -->
+            <div class="view-menu">
+                <label>서버 정보 1</label>
+            </div>
+
+            <div class="config">
+                <label>모델명</label>
+                <input class="product-code" type="text" placeholder="모델명을 입력해주세요.">
+            </div>
+
+            <div class="config">
+                <label>바코드</label>
+                <input class="bacorde-text" type="text" placeholder="값을 입력해주세요.">
+            </div>
+
+
+            <!-- view-menu -->
+            <div class="view-menu">
+                <label>서버 정보 2</label>
+            </div>
+
+            <div class="config">
+                <label>모델명</label>
+                <input class="product-code" type="text" placeholder="모델명을 입력해주세요.">
+            </div>
+
+            <div class="config">
+                <label>바코드</label>
+                <input class="bacorde-text" type="text" placeholder="값을 입력해주세요.">
+            </div>
+
+
+            <!-- view-menu -->
+            <div class="view-menu">
+                <label>소형 스티커</label>
+            </div>
+
+            <div class="config">
+                <label>시작</label>
+                <input id="small-idx" type="number" value=1>
+            </div>
+            
+            <div class="config">
+                <label>수량</label>
+                <input id="small-cnt" type="number" value=2>
+            </div>
+
+
+            <!-- view-menu -->
+            <div class="view-menu">
+                <label>중형 스티커</label>
+            </div>
+
+            <div class="config">
+                <label>시작</label>
+                <input id="medium-idx" type="number" value=1>
+            </div>
+            
+            <div class="config">
+                <label>수량</label>
+                <input id="medium-cnt" type="number" value=2>
+            </div>
+
+
+            <!-- view-menu -->
+            <div class="view-menu">
+                <label>대형 스티커</label>
+            </div>
+
+            <div class="config">
+                <label>시작</label>
+                <input id="large-idx" type="number" value=1>
+            </div>
+            
+            <div class="config">
+                <label>수량</label>
+                <input id="large-cnt" type="number" value=2>
+            </div>
+
+
+            <!-- button -->
+            <svg id="barcode" style="display: none;"></svg>
+            <button id="start" class="black-btn">PDF 생성</button>
+        </section>
+
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
