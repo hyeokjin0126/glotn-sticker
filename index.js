@@ -23,13 +23,15 @@ document.querySelector("#start").addEventListener("click", async function(){
   const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: [210, 297] });
 
   // create
+  let currentPage = 1;
   for (const target of ["small", "medium", "large"]) {
-    let startIndex = Number(document.querySelector(`#${target}-idx`).value);
+    let startIndex = Number(document.querySelector(`#${target}-idx`).value) - 1;
     let count = Number(document.querySelector(`#${target}-cnt`).value);
     
-    if (startIndex > 0) {
+    if (startIndex >= 0 && count > 0) {
       // addPage
-      if(target != "small" && count > 0){ pdf.addPage(); }
+      if(currentPage > 1){ pdf.addPage(); }
+      currentPage ++
       
       // addLabel
       for (const { productName, barcodeText } of datas) {
