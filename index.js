@@ -52,7 +52,7 @@ async function smallLabel(pdf, startIndex, count, barcodeText) {
   const workspace = { 
     pdf: { top: 23.3, left: 9.7 },
     label: { width: 30, height: 14, cols: 6, rows: 16, gap: 2 },
-    bacrod: { x: 10, y: 2, w: 18, h:6 },
+    bacrod: { x: 10, y: 2.5, w: 18, h:6 },
     serial: { x: 1.5, y: 8.5, w: 27, h:3 }
   };
 
@@ -84,7 +84,7 @@ async function smallLabel(pdf, startIndex, count, barcodeText) {
 async function mediumLabel(pdf, startIndex, count, barcodeText) {
   const templateImg = await imageToBase64("./template/medium.png");
   const workspace = { 
-    pdf: { top: 14.5, left: 6 },
+    pdf: { top: 14.2, left: 6 },
     label: { width: 64, height: 33.86, cols: 3, rows: 8, gap: 2.4 },
     bacrod: { x: 6, y: 18, w: 52, h:6 },
     serial: { x: 3, y: 27, w: 58, h:3 }
@@ -183,3 +183,4 @@ function svgToPng(svgEl) {
   });
 
 }
+
